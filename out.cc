@@ -62143,7 +62143,6 @@ void RemoveExtraAsciiWhitespace(absl::Nonnull<std::string*> str);
 }
 # 16 "../third_party/abseil/src/absl/strings/ascii.cc" 2
 
-
 # 1 "/usr/include/c++/9/climits" 1 3
 # 39 "/usr/include/c++/9/climits" 3
        
@@ -62152,13 +62151,13 @@ void RemoveExtraAsciiWhitespace(absl::Nonnull<std::string*> str);
 
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h" 1 3 4
 # 43 "/usr/include/c++/9/climits" 2 3
-# 19 "../third_party/abseil/src/absl/strings/ascii.cc" 2
+# 18 "../third_party/abseil/src/absl/strings/ascii.cc" 2
 
 # 1 "/usr/include/c++/9/cstring" 1 3
 # 39 "/usr/include/c++/9/cstring" 3
        
 # 40 "/usr/include/c++/9/cstring" 3
-# 21 "../third_party/abseil/src/absl/strings/ascii.cc" 2
+# 20 "../third_party/abseil/src/absl/strings/ascii.cc" 2
 
 
 
@@ -62169,7 +62168,7 @@ void RemoveExtraAsciiWhitespace(absl::Nonnull<std::string*> str);
 namespace absl {
 inline namespace lts_20240722 {
 namespace ascii_internal {
-# 71 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 70 "../third_party/abseil/src/absl/strings/ascii.cc"
  const unsigned char kPropertyBits[256] = {
     0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40, 0x40,
     0x40, 0x68, 0x48, 0x48, 0x48, 0x48, 0x40, 0x40,
@@ -62273,15 +62272,14 @@ namespace ascii_internal {
 template <bool ToUpper>
 constexpr bool AsciiInAZRange(unsigned char c) {
   constexpr unsigned char sub = (ToUpper ? 'a' : 'A') - 
-# 173 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+# 172 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
                                                        (-0x7f - 1)
-# 173 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 172 "../third_party/abseil/src/absl/strings/ascii.cc"
                                                                 ;
-  static_assert(false, std::string_view(&sub));
   constexpr signed char threshold = 
-# 175 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+# 173 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
                                    (-0x7f - 1) 
-# 175 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 173 "../third_party/abseil/src/absl/strings/ascii.cc"
                                              + 26;
 
   unsigned char u = c - sub;
@@ -62315,17 +62313,17 @@ template <bool ToUpper>
 __attribute__((noinline)) constexpr void AsciiStrCaseFoldLong(
     absl::Nonnull<char*> p, size_t size) {
   
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
  (static_cast <bool> (
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc"
  size >= kCaseFoldThreshold
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
  ) ? void (0) : __assert_fail (
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc"
  "size >= kCaseFoldThreshold"
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
- , "../third_party/abseil/src/absl/strings/ascii.cc", 207, __extension__ __PRETTY_FUNCTION__))
-# 207 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+ , "../third_party/abseil/src/absl/strings/ascii.cc", 205, __extension__ __PRETTY_FUNCTION__))
+# 205 "../third_party/abseil/src/absl/strings/ascii.cc"
                                         ;
   AsciiStrCaseFoldImpl<ToUpper>(p, size);
 }
@@ -62340,9 +62338,9 @@ constexpr void AsciiStrCaseFold(absl::Nonnull<char*> p, size_t size) {
 
 static constexpr size_t ValidateAsciiCasefold() {
   constexpr size_t num_chars = 1 + 0x7f - 
-# 220 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
+# 218 "../third_party/abseil/src/absl/strings/ascii.cc" 3 4
                                              (-0x7f - 1)
-# 220 "../third_party/abseil/src/absl/strings/ascii.cc"
+# 218 "../third_party/abseil/src/absl/strings/ascii.cc"
                                                      ;
   size_t incorrect_index = 0;
   char lowered[num_chars] = {};
